@@ -85,5 +85,11 @@ class SearchableObjectExtension extends DataExtension
         }
     }
 
-
+    public function onAfterDelete()
+    {
+         //check if record exists then delete it
+        if ($this->getOwner()->SearchRecord()->exists()) {
+            $this->getOwner()->SearchRecord()->delete();
+        }
+    }
 }
