@@ -85,13 +85,5 @@ class SearchableObjectExtension extends DataExtension
         }
     }
 
-    /**
-     * Delete the linked search record if this record is deleted
-     *
-     * @return null
-     */
-    public function onAfterDelete()
-    {
-        $this->getOwner()->SearchRecord()->delete();
-    }
+
 }
